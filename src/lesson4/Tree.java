@@ -3,6 +3,21 @@ package lesson4;
 public class Tree <V extends Comparable<V>>{
     private Node root;
 
+    private class Node {
+        private V value;
+        private Color color;
+        private Node leftChild;
+        private Node rightChild;
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    ", color=" + color +
+                    '}';
+        }
+    }
+
     public boolean add(V value) {
         if (root != null) { // если есть рутовый элемент, то
             boolean result = addNode(root, value); // добавляем новую ноду относительно рута
@@ -100,20 +115,6 @@ public class Tree <V extends Comparable<V>>{
         node.rightChild.color = Color.BLACK;
         node.leftChild.color = Color.BLACK;
         node.color = Color.RED;
-    }
-    private class Node {
-        private V value;
-        private Color color;
-        private Node leftChild;
-        private Node rightChild;
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "value=" + value +
-                    ", color=" + color +
-                    '}';
-        }
     }
 
     private enum Color {
