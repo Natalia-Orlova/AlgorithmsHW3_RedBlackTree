@@ -1,9 +1,5 @@
 package lesson4;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Tree <V extends Comparable<V>>{
     private Node root;
 
